@@ -7,7 +7,7 @@ R="\e[31m"
 G="\e[32m"
 n="\e[0m"
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
-
+ echo "script started executing at $TIMESTAMP" &>> $LoGFILE
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
