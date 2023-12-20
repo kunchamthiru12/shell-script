@@ -9,7 +9,7 @@ n="\e[0m"
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
 VALIDATE(){
-    if [$1? -ne 0]
+    if [ $1? -ne 0 ]
     then
         echo -e " ERROR:: $2 ... $R failed $N"
         exit1
@@ -18,7 +18,7 @@ VALIDATE(){
     fi  
 }
 
-if [$ID -ne 0]
+if [ $ID -ne 0 ]
 then
     echo -e "$R Error:: please run this script with root access $N"
     exit 1
