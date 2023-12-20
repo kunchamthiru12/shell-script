@@ -2,13 +2,14 @@
 
 ID=$(id -u)
 
-if [$? -ne 0]
 VALIDATE(){
-then
-    echo "ERROR:: installing  is failed"
-else
-    echo "Installing   is success"
-fi  
+    if [$? -ne 0]
+    then
+        echo "ERROR:: installing  is failed"
+        exit1
+    else
+        echo "Installing   is success"
+    fi  
 }
 
 if [$ID -ne 0]
