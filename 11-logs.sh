@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 ID=$(id -u)
 
@@ -8,7 +8,7 @@ G="\e[32m"
 N="\e[0m"
 LOGFILE="/tmp/$0-$TIMESTAMP.log"
 
- echo "script started executing at $TIMESTAMP" &>> $LoGFILE
+ echo "script started executing at $TIMESTAMP" &>> $LOGFILE
 VALIDATE(){
     if [ $1 -ne 0 ]
     then
@@ -30,3 +30,8 @@ fi # fi means reverse of if, indicating condition end
 yum install mysql -y &>> $LOGFILE
 
 VALIDATE $? "Installing MySQL"
+
+
+yum install GIT -y &>> $LOGFILE
+
+VALIDATE $? "Installing GIT"
